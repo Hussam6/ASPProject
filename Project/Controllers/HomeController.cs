@@ -25,10 +25,10 @@ namespace Project.Controllers
         //    return View();
         //}
 
-        [HttpPost]
-        public ActionResult Index(LoginController loginController)
+        [Authorize]
+        public ActionResult Welcome(LoginController loginController)
         {
-            ViewBag.Message = "Your contact page.";
+            //ViewBag.Message = "Your contact page.";
             
 
 
