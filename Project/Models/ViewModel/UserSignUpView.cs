@@ -15,7 +15,7 @@ namespace Project.Models.ViewModel
 
         
         [Required(ErrorMessage ="Name Required")]
-        [Display(Name = "User Name")]
+        [Display(Name = "Name")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Password Required")]

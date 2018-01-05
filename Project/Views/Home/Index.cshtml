@@ -1,27 +1,38 @@
-﻿
+﻿@model Project.Models.LocationModel.Rootobject
 @{
-    Layout = null;
+
 }
+@*Not a User? @Html.ActionLink("Signup Now!", "SignUp", "Account")*@
+@*Weather status: @Html.ActionLink("Clicky", "WeatherForm", "Weather")*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
 
-Not a User? @Html.ActionLink("Signup Now!", "SignUp", "Account")
-Weather status: @Html.ActionLink("Clicky", "WeatherForm", "Weather")
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <header>
+        <img src="~/Content/Images/The-Weather-App (1).png" />
+    </header>
+    <br />
+        <div class="text-center">
+            <img src="~/Content/Images/mobile-phone.png" />
+            <label>Don't have an account?</label>
+            <input class="btn btn-primary" type="button" title="SignUp" value="Signup Now!" onclick="location.href='@Url.Action("SignUp", "Account")'" /><br />
+            <br />
+            <img src="~/Content/Images/sun.png" />
+            <label>Want to check the weather?</label>
+            <input class="btn btn-primary" type="button" title="Weather" value="Look it up!" onclick="location.href='@Url.Action("WeatherForm", "Weather")'" />
+        </div>
+    
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-12">
+            @*Client location:  @Model.longitude*@
+        </div>
+    </div>
+    @*<div>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>*@
 
-@Html.ActionLink("Create A New Invoice", "Create", "Travel", null, new { @class = "btn btn-primary btn-large" })
-<form class="p-a-1" asp-action="Index" method="post">
-    <div asp-validation-summary="All"></div>
-    <div class="form-group">
-        <label asp-for="Lat">Lat:</label>
-        <input class="form-control" asp-for="Lat" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Long">Long:</label>
-        <input class="form-control" asp-for="Long" />
-    </div>
-    <div class="text-center">
-        <label></label>
-        <button class="btn btn-primary" name="Accept" value="true" type="submit">Accept</button>
-    </div>
-    <div class="text-center">
-
-    </div>
-</form>
+</body>
+</html>

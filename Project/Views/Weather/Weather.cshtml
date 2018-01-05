@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Weather";
 }
+<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -99,4 +100,5 @@
     </tr>
 </table>
 
-@Html.ActionLink("Search Again", "WeatherForm")
+<input class="btn btn-primary" value="Search Again" onclick="location.href='@Url.Action("WeatherForm", "Weather")'" />
+<input class="btn btn-primary" value="Go Back" onclick="location.href='@Url.Action("Index", "Home")'" />
