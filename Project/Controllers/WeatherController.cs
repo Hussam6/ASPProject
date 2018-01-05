@@ -49,20 +49,21 @@ namespace Project.Controllers
         public ViewResult WeatherForm(LatLngModel x)
         {
             //Debug.WriteLine("***** TEST : " + x.lat.ToString());
-            
-            Rootobject r = GetWeather(x.lat.ToString(), x.lng.ToString());
+           
             try
             {
-                if (r.query.results.channel.astronomy.sunrise != null)
+                Rootobject r = GetWeather(x.lat.ToString(), x.lng.ToString());
+                if (r.query.results != null)
                 {
                     return View("Weather", r);
                 }
-            } catch (NullReferenceException e)
+            } catch (Exception e)
             {
-                return View();
+                ModelState.AddModelError(x.lat.ToString(), "Location not valid");
+                return View(x);
             }
-            return View();
-            
+            ModelState.AddModelError("lat", "Location not valid");
+            return View(x);
         }
 
 
