@@ -1,0 +1,102 @@
+﻿@model Project.Models.WeatherModels.Rootobject
+
+@{
+    ViewBag.Title = "Weather";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>@Model.query.results.channel.item.title</h2>
+            <h3>Currently</h3>
+            <table class="table-bordered">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Cast</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Model.query.results.channel.item.condition.temp @Model.query.results.channel.units.temperature
+                    </td>
+                    <td>
+                        @Model.query.results.channel.item.condition.text
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Atmosphere</h3>
+            <table class="table-bordered table table">
+                <tr>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Visibility</th>
+                </tr>
+                <tr>
+                    <td>@Model.query.results.channel.atmosphere.humidity</td>
+                    <td>@Model.query.results.channel.atmosphere.pressure</td>
+                    <td>@Model.query.results.channel.atmosphere.visibility</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <h3>Wind</h3>
+            <table class="table-bordered table table">
+                <tr>
+                    <th>Wind Chill</th>
+                    <th>Direction</th>
+                    <th>Speed</th>
+                </tr>
+                <tr>
+                    <td>@Model.query.results.channel.wind.chill @Model.query.results.channel.units.temperature</td>
+                    <td>@Model.query.results.channel.wind.direction</td>
+                    <td>@Model.query.results.channel.wind.speed @Model.query.results.channel.units.speed </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <h3>Astronomy</h3>
+            <table class="table-bordered table table">
+                <tr>
+                    <th>Sunrise</th>
+                    <th>Sunset</th>
+                </tr>
+                <tr>
+                    <td>@Model.query.results.channel.astronomy.sunrise</td>
+                    <td>@Model.query.results.channel.astronomy.sunset</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h2>Upcoming Forecast for @Model.query.results.channel.location.city</h2>
+<table class="table table-bordered table-striped panel-collapse">
+    <tr>
+        @foreach (var item in Model.query.results.channel.item.forecast)
+        {
+            <th>@item.day</th>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.query.results.channel.item.forecast)
+        {
+            <td>High <br />@item.high</td>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.query.results.channel.item.forecast)
+        {
+            <td>Low <br /> @item.low</td>
+        }
+    </tr>
+    <tr>
+        @foreach (var item in Model.query.results.channel.item.forecast)
+        {
+            <td>@item.text</td>
+        }
+    </tr>
+</table>
+
+@Html.ActionLink("Search Again", "WeatherForm")
