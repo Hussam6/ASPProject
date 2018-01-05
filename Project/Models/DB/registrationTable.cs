@@ -12,12 +12,13 @@ namespace Project.Models.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class UserLoginTable
+    public partial class registrationTable
     {
-        public int Id { get; set; }
+        public int UserID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string City { get; set; }
         public string Email { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
     }
 }

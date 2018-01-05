@@ -13,10 +13,10 @@ namespace Project.Models.DB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MasterEntityLogin : DbContext
+    public partial class FinalRegEntity : DbContext
     {
-        public MasterEntityLogin()
-            : base("name=MasterEntityLogin")
+        public FinalRegEntity()
+            : base("name=FinalRegEntity")
         {
         }
     
@@ -25,8 +25,6 @@ namespace Project.Models.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UserLoginTable> UserLoginTables { get; set; }
-
-        public System.Data.Entity.DbSet<Project.Models.ViewModel.UserSignUpView> UserSignUpViews { get; set; }
+        public virtual DbSet<registrationTable> registrationTables { get; set; }
     }
 }

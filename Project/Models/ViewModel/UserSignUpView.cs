@@ -22,14 +22,20 @@ namespace Project.Models.ViewModel
         [Display(Name = "Password")]
         public string password { get; set; }
 
-
-        [Required(ErrorMessage = "City Required")]
-        [Display(Name = "City")]
-        public string cityName { get; set; }
+        //Removed City
 
         [Required(ErrorMessage = "Email Required")]
         [Display(Name = "Email")]
         public string email { get; set; }
+
+        [Required(ErrorMessage = "Longitutde Required")]
+        [Display(Name = "Longitude")]
+        public float longitude { get; set; }
+
+        [Required(ErrorMessage = "Latitutde Required")]
+        [Display(Name = "Latitude")]
+        public float latitude { get; set; }
+
 
 
     }

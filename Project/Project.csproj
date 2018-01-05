@@ -21,10 +21,8 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication>
-    </IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>
-    </IISExpressWindowsAuthentication>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -196,23 +194,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\UserLoginModel.Context.cs">
+    <Compile Include="Models\DB\FinalRegModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserLoginModel.Context.tt</DependentUpon>
+      <DependentUpon>FinalRegModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\UserLoginModel.cs">
+    <Compile Include="Models\DB\FinalRegModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserLoginModel.tt</DependentUpon>
+      <DependentUpon>FinalRegModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\UserLoginModel.Designer.cs">
+    <Compile Include="Models\DB\FinalRegModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserLoginModel.edmx</DependentUpon>
+      <DependentUpon>FinalRegModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\UserLoginTable.cs">
-      <DependentUpon>UserLoginModel.tt</DependentUpon>
+    <Compile Include="Models\DB\registrationTable.cs">
+      <DependentUpon>FinalRegModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityManager\UserManager.cs" />
     <Compile Include="Models\LocationModel\Location.cs" />
@@ -241,23 +239,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\DB\UserLoginModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserLoginModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DB\UserLoginModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserLoginModel.edmx</DependentUpon>
-      <LastGenOutput>UserLoginModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DB\UserLoginModel.edmx.diagram">
-      <DependentUpon>UserLoginModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\DB\UserLoginModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserLoginModel.edmx</DependentUpon>
-      <LastGenOutput>UserLoginModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -284,6 +265,23 @@
     <Content Include="Content\Font\american_captain-webfont.ttf" />
     <Content Include="Content\Font\american_captain-webfont.woff" />
     <Content Include="Content\Font\american_captain-webfont.woff2" />
+    <EntityDeploy Include="Models\DB\FinalRegModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinalRegModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DB\FinalRegModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalRegModel.edmx</DependentUpon>
+      <LastGenOutput>FinalRegModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DB\FinalRegModel.edmx.diagram">
+      <DependentUpon>FinalRegModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DB\FinalRegModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalRegModel.edmx</DependentUpon>
+      <LastGenOutput>FinalRegModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -331,6 +329,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,7 +18,7 @@ namespace Project.Controllers
         [Authorize]
         public ActionResult Welcome(LoginController loginController)
         {
-            return View();
+            return View("Index");
         }
 
     }

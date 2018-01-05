@@ -14,16 +14,20 @@ namespace Project.Models.EntityManager
     {
         public void addUserAccount(UserSignUpView userSignUpView) {
 
-            using (MasterEntityLogin db = new MasterEntityLogin())
+            
+            using (FinalRegEntity db = new FinalRegEntity())
             {
                 try {
-                    UserLoginTable ult = new UserLoginTable();
-                    ult.UserName = userSignUpView.UserName;
-                    ult.Password = userSignUpView.password;
-                    ult.City = userSignUpView.cityName;
-                    ult.Email = userSignUpView.email;
 
-                    db.UserLoginTables.Add(ult);
+                    registrationTable reg = new registrationTable();
+                   
+                    reg.UserName = userSignUpView.UserName;
+                    reg.Password = userSignUpView.password;
+                    reg.Email = userSignUpView.email;
+                    reg.Longitude= userSignUpView.longitude;
+                    reg.Latitude = userSignUpView.latitude;
+
+                    db.registrationTables.Add(reg);
                     db.SaveChanges();
 
 
