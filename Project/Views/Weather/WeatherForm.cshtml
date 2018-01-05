@@ -1,0 +1,21 @@
+﻿@model Project.Models.WeatherModels.LatLngModel
+
+@{
+    ViewBag.Title = "WeatherForm";
+}
+
+<h2>Search for a location</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+
+    <p>Lat: @Html.TextBoxFor(x => x.lat) </p>
+    <p>lon: @Html.TextBoxFor(x => x.lng) </p>
+
+    <input type="submit" />
+}
+
+
+
+
