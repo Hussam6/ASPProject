@@ -5,7 +5,22 @@
 }
 
 <h2>Index</h2>
-<br/>
+<br />
 Not a User? @Html.ActionLink("Signup Now!", "SignUp", "Account")
 Weather status: @Html.ActionLink("Clicky", "WeatherForm","Weather")
 
+<form class="p-a-1" asp-action="Index" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Lat">Lat:</label>
+        <input class="form-control" asp-for="Lat" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Long">Long:</label>
+        <input class="form-control" asp-for="Long" />
+    </div>
+    <div class="text-center">
+        <label></label>
+        <button class="btn btn-primary" name="Accept" value="true" type="submit">Accept</button>
+    </div>
+</form>
