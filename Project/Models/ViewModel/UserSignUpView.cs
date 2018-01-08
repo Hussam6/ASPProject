@@ -13,7 +13,7 @@ namespace Project.Models.ViewModel
         [Key]
         public int UserID { get; set; }
 
-        
+         
         [Required(ErrorMessage ="Name Required")]
         [Display(Name = "Name")]
         public string UserName { get; set; }
